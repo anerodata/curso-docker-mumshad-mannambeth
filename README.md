@@ -1,7 +1,6 @@
 # Curso de Docker
 
 Curso básico de Docker Udemy [Docker for the Absolute Beginner - Hands On - DevOps](https://www.udemy.com/course/learn-docker/)
-Escenario en el que Docker puede ser realmente útil
 
 ## 1 Introducción
 
