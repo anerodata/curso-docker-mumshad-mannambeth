@@ -5,7 +5,7 @@ Escenario en el que Docker puede ser realmente útil
 
 ## 1 Introducción
 
-El texto describe cómo el autor fue introducido a Docker en un proyecto anterior. Al desarrollar una aplicación que combinaba varias tecnologías (NodeJS, MongoDB, Redis), enfrentó problemas de compatibilidad entre componentes, bibliotecas y sistemas operativos. Cada vez que actualizaban o cambiaban un componente, debían revisar todas las compatibilidades, lo que dificultaba el desarrollo y despliegue, además de la configuración de entornos de desarrollo para nuevos miembros del equipo.
+Al desarrollar una aplicación que combinaba varias tecnologías (NodeJS, MongoDB, Redis), se enfrentan problemas de compatibilidad entre componentes, bibliotecas y sistemas operativos. Cada vez que se actualizan o cambian componentes, debían revisar todas las compatibilidades, lo que dificulta el desarrollo y despliegue, además de la configuración de entornos de desarrollo para nuevos miembros del equipo.
 
 Docker resolvió estos problemas al permitir que cada componente se ejecute en un contenedor aislado, con sus propias dependencias y bibliotecas, pero compartiendo el mismo kernel del sistema operativo. Esto facilitó el desarrollo, permitiendo que los entornos sean consistentes independientemente del sistema operativo subyacente. Docker, aunque no es nuevo, usa tecnologías como LXC y proporciona una herramienta fácil de usar para manejar estos contenedores. A diferencia de las máquinas virtuales, los contenedores son más ligeros y rápidos, ya que comparten el kernel del sistema operativo, pero tienen menos aislamiento. Docker permite empaquetar aplicaciones y ejecutarlas en cualquier entorno sin preocuparse por la compatibilidad, fomentando la cultura DevOps.
 
