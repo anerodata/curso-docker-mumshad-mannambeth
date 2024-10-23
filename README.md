@@ -2,6 +2,8 @@
 
 Curso básico de Docker Udemy [Docker for the Absolute Beginner - Hands On - DevOps](https://www.udemy.com/course/learn-docker/)
 
+Más información sobre docker: [¿Qué es Docker y cómo funciona?](https://www.redhat.com/es/topics/containers/what-is-docker)
+
 ## 1 Introducción
 
 Al desarrollar una aplicación que combinaba varias tecnologías (NodeJS, MongoDB, Redis), se enfrentan problemas de compatibilidad entre componentes, bibliotecas y sistemas operativos. Cada vez que se actualizan o cambian componentes, debían revisar todas las compatibilidades, lo que dificulta el desarrollo y despliegue, además de la configuración de entornos de desarrollo para nuevos miembros del equipo.
