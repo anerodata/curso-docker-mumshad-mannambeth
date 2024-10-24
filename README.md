@@ -40,3 +40,12 @@ Tradicionalmente, los desarrolladores creaban aplicaciones y luego las entregaba
 - `docker exec [container_name] cat /etc/hosts`: Ejecuta el comando cat para mostrar el contenido del fichero `/etc/hosts` del contenedor en cuestión
 - `docker run -d kodekloud/simple-webapp`: ejecutaría el contenedor de la imagen alojada en ese repositorio en modo _detached_. El output del servidor no se mostraría ya que se estaría ejecutando en el _background_
 - `docker attach [id or name]`: Vuelve a la ejecución del docker
+
+## 3 `docker run` avanzado
+
+- `docker run ubuntu cat /etc/*release*`: Ejecuta el contenedor ubuntu desde su imagen y mostraría la version del SO
+- `docker run 'ubuntu:17.10' cat /etc/*release*`: Lo mismo pero una version concreta que veríamos en Docker hub
+- `docker run 'ubuntu:17.10' sleep 1500`: Ejecutaria el programa `sleep` de Ubuntu, para pararlo deberíamos ir a otra terminal y escribir `docker stop [name o id]`
+- `sudo docker run jenkins/jenkins` Ejecuta el contenedor de jenkins desde su imagen
+- `sudo docker inspect [jenkins/jenkins]` Podemos ver en Network, la IP a la que debemos de apuntar en el navegador para ver la web y el puerto.
+
