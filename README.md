@@ -47,5 +47,7 @@ Tradicionalmente, los desarrolladores creaban aplicaciones y luego las entregaba
 - `docker run 'ubuntu:17.10' cat /etc/*release*`: Lo mismo pero una version concreta que veríamos en Docker hub
 - `docker run 'ubuntu:17.10' sleep 1500`: Ejecutaria el programa `sleep` de Ubuntu, para pararlo deberíamos ir a otra terminal y escribir `docker stop [name o id]`
 - `sudo docker run jenkins/jenkins` Ejecuta el contenedor de jenkins desde su imagen
-- `sudo docker inspect [jenkins/jenkins]` Podemos ver en Network, la IP a la que debemos de apuntar en el navegador para ver la web y el puerto.
-
+- `sudo docker inspect [docker-id]` Podemos ver en Network, la IP a la que debemos de apuntar en el navegador para ver la web y el puerto.
+- `sudo docker run -p 8080:8080 jenkins/jenkins`: Abriría Jenkins en el puerto 8080
+- `sudo docker run -p 8080:8080 -v /root/my-jenkins:/var/jenkins_home -u root jenkins/jenkins`: Abriría Jenkins en el puerto 8080, pero esta vez, mapeando un directorio `/root/my-jenkins`, persistiendo el trabajo y guardandolo en lo que se guardaría por defecto en `/var/jenkins_home`
+- Después de detener el contenedor, y volver a arrancarlo con el mismo comando, podemos ver que se persisten los datos guardados anteriormente
