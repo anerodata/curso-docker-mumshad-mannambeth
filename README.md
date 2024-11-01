@@ -51,3 +51,40 @@ Tradicionalmente, los desarrolladores creaban aplicaciones y luego las entregaba
 - `sudo docker run -p 8080:8080 jenkins/jenkins`: Abriría Jenkins en el puerto 8080
 - `sudo docker run -p 8080:8080 -v /root/my-jenkins:/var/jenkins_home -u root jenkins/jenkins`: Abriría Jenkins en el puerto 8080, pero esta vez, mapeando un directorio `/root/my-jenkins`, persistiendo el trabajo y guardandolo en lo que se guardaría por defecto en `/var/jenkins_home`
 - Después de detener el contenedor, y volver a arrancarlo con el mismo comando, podemos ver que se persisten los datos guardados anteriormente
+
+## 4 Creating a new Docker Image
+
+URL de la app: `https://github.com/mmumshad/simple-webapp`
+
+- `docker run -it ubuntu bash`: Arranca el contenedor y te conecta a su bash (it: input terminal)
+  Después de hacer esto, instala la app y sus requerimientos y se disponia a doquerizarla
+  Consulta el historial en ubuntu con`history`, copia todos los comandos que ha usado en la instalacion de los requerimientos y el comando de arranque de la app. Crea un directorio `my-simple-webapp`, dentro crea el `Dockerfile` con el siguiente contenido:
+
+```
+FROM ubuntu
+RUN [comando]
+RUN [comando]
+...
+
+COPY app.py `/opt/app.py`
+
+ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
+```
+
+A continuación copia el código de la app de `app.py` en el directorio y ejecuta `docker build .` para construir la imagen `docker build . -t my-app` Lo construy otorgándole un nombre.
+
+Ahora al correr `docker images` aparece la app y se puede levantanr su contenedor con `docker run my-app`
+
+`docker push my-app` sube la imagen a Dockerhub al repositorio por defecto, al cual no vamos a tener acceso. `docker push mi-usuario/my-app` la sube al repositorio del usuario. Per primer le cambia el bombre con `docker build . -t mi-usuario/my-app`.
+
+Antes hay que logearse con `docker login`
+
+## 4.1 Labs
+
+### Variables de entorno
+
+Run a container named blue-app using image kodekloud/simple-webapp and set the environment variable APP_COLOR to blue. Make the application available on port 38282 on the host. The application listens on port 8080.
+
+```
+~ ➜  docker run -p 38282:8080 --name blue-app -e APP_COLOR=blue -d kodekloud/simple-webapp
+```
